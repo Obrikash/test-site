@@ -1,0 +1,9 @@
+.sites {
+    display: inline-block;
+    border: 5px solid;
+}
+
+.site-names {
+    font-weight: normal;
+    text-align: center;
+}
