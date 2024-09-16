@@ -8,6 +8,38 @@
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <script defer>
+        // Открыть модальное окно
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        // Закрыть модальное окно
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Закрыть модальное окно при клике вне окна
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Добавить обработчики для всех кнопок
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("openModal1").addEventListener('click', openModal);
+            document.getElementById("openModal2").addEventListener('click', openModal);
+            document.getElementById("openModal3").addEventListener('click', openModal);
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Форма успешно отправлена!');
+            // Alternatively: window.location.href = 'thank-you.html';
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -15,7 +47,7 @@
             <img src="images/logo.png" width=50px height=50px alt="Логотип" />
             <p>Это хедер c логотипом</p>
         </div>
-      <p>Это меню</p>
+        <p>Это меню</p>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -27,41 +59,85 @@
             </ul>
         </nav>
     </header>
-    
-      <aside>
-            <h2>Элемент &ltaside&gt</h2>
-            <ul>
-                <p>Навигация по странице</p>
-                <li><a href="index.html#frontend">Фронтенд</a></li>
-                <li><a href="index.html#backend">Бэкенд</a></li>
-            </ul>
-        </aside>
-        <main>
-            <h1>Разработка веб-приложений</h1>
-            <div class="sites">
-                <section>
-                    <a><img src="images/langing-page.jpg" width="300px" height="300px" /></a>
-                    <h3 class="site-names">Landing page</h3>
-                </section>
-                <section>
-                    <a><img src="images/corporate-site.jpg" width="300px" height="300px" /></a>
-                    <h3 class="site-names">Corporate site</h3>
-                </section>
-                <section>
-                    <a><img src="images/shop-page.jpg" width="300px" height="300px" /></a>
-                    <h3 class="site-names">Shop page</h3>
 
-                </section>  
-            </div>
-            <p>Тут много текста об этих сайтах</p>
-        </main>
-        <footer>
-            <p>&copy; Качурин Никита Викторович, 2024. Все права защищены.</p>
-            <ul class="social-links">
-                <a href="https://vk.com" target="_blank" rel="noopener noreferrer"><img src="images/vk.png" width=25px heigth=25px alt="vkontakte" /></a>
-                <a href="https://whatsapp.com" target="_blank"><img src="images/whatsapp.png" width="25px" height="25px" alt="Whatsapp" /></a>
-            </ul>
-        </footer>          
-    
+    <aside>
+        <h2>Элемент &ltaside&gt</h2>
+        <ul>
+            <p>Навигация по странице</p>
+            <li><a href="index.html#frontend">Фронтенд</a></li>
+            <li><a href="index.html#backend">Бэкенд</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <h1>Разработка веб-приложений</h1>
+        <div class="sites"> 
+            <section>
+                <a><img src="images/langing-page.jpg" width="300px" height="300px" /></a>
+                <h3 class="site-names">Landing page</h3>
+                <button id="openModal1">Заказать сайт</button>
+            </section>
+            <section>
+                <a><img src="images/corporate-site.jpg" width="300px" height="300px" /></a>
+                <h3 class="site-names">Corporate site</h3>
+                <button id="openModal2">Заказать сайт</button>
+            </section>
+            <section>
+                <a><img src="images/shop-page.jpg" width="300px" height="300px" /></a>
+                <h3 class="site-names">Shop page</h3>
+                <button id="openModal3">Заказать сайт</button>
+            </section>  
+        </div>
+        <p>Тут много текста об этих сайтах</p>
+    </main>
+
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center;">
+        <div class="modal-content" style="background-color: white; padding: 20px; border-radius: 8px; width: 400px;">
+            <span class="close" style="float: right; cursor: pointer;" onclick="closeModal()">&times;</span>
+            <form>
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Страна:</label>
+                    <select id="country" name="country">
+                        <option value="usa">США</option>
+                        <option value="russia">Россия</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата</label>
+                    <input type="date" id="dateChoice" name="dateChoice">
+                </div>
+                <div class="form-group">
+                    <label for="comments">Комментарии:</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Качурин Никита Викторович, 2024. Все права защищены.</p>
+        <ul class="social-links">
+            <a href="https://vk.com" target="_blank" rel="noopener noreferrer"><img src="images/vk.png" width=25px heigth=25px alt="vkontakte" /></a>
+            <a href="https://whatsapp.com" target="_blank"><img src="images/whatsapp.png" width="25px" height="25px" alt="Whatsapp" /></a>
+        </ul>
+    </footer>          
 </body>
 </html>
+
+   
