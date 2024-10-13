@@ -1,11 +1,173 @@
-.sites {
+body {
+    background-color: orange;
+}
+
+header {
+    background-color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo-and-name {
+    border: 3px black solid;
+    padding-left: 10px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+#logo-text {
+    margin-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+.student-name {
+    text-align: right;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.menu {
+    border: 3px black solid;
+    border-top: 1px black solid;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.menu-list li {
+    margin: 0 15px;
+}
+
+.menu-list a:hover {
+    color: orange;
+}
+
+.menu-list a:active {
+    color: red;
+}
+
+h1 {
+    font-size: 48px;
+    color: darkgreen;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    color: darkblue;
+    margin-bottom: 8px;
+}
+
+.text-paragraph {
+    font-family: Arial;
+    font-size: 16px;
+}
+
+main {
+    margin-left: 30px;
+}
+
+article, section, aside {
+    border: 2px solid black;
+    padding: 15px; 
+    background-color: lightgray;
+    margin-bottom: 20px;
+}
+
+ul  {
+    list-style-type: none;
+    padding: 0px;
+}
+
+img {
+    max-width: 100%;
+    margin: 10px 0; 
+}
+
+.introduction {
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduction img {
+    margin: 30px;
+}
+
+.main-page {
+    display: flex;
+    border-bottom: 3px black solid;
+    border-right: 3px black solid;
+}
+
+.product-cards {
+    padding-left: 400px;
+}
+
+.main-heading {
+    text-align: center;
+    color: purple;
+}
+
+.text-product-cards {
+    text-align: center;
+    font-family: Arial;
+}
+
+.product-card {
     display: flex;
     justify-content: space-around;
     border: 3px solid;
 }
 
+.product-cards section {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Тень */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавные эффекты */
+    margin: 10px;
+    background-color: white;
+}
+
+.product-cards section:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Более выраженная тень */
+}
+
+/* Стили для кнопок */
+button {
+    background-color: darkorange; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Эффект при наведении */
+}
+
+button:hover {
+    background-color: orangered; /* Цвет фона при наведении */
+}
+
+button:active {
+    background-color: darkred; /* Цвет фона при клике */
+}
+
 .site-names {
-    font-weight: normal;
     text-align: center;
 }
 
@@ -31,6 +193,50 @@
     width: 80%; /* Ширина модального окна */
 }
 
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступы между элементами формы */
+}
+
+.modal-content input, 
+.modal-content select, 
+.modal-content textarea {
+    padding: 8px;
+    border: 1px solid gray; /* Граница полей */
+    border-radius: 5px; /* Закругленные углы */
+    width: 100%; /* Ширина полей */
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Эффект при фокусе */
+}
+
+.modal-content input:focus, 
+.modal-content select:focus, 
+.modal-content textarea:focus {
+    border-color: darkorange; /* Цвет границы при фокусе */
+    outline: none;
+}
+
+.modal-content button {
+    background-color: darkorange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: orangered;
+}
+
+.modal-content button:active {
+    background-color: darkred;
+}
+
 .close {
     color: #aaa; /* Цвет кнопки закрытия */
     float: right;
@@ -49,64 +255,6 @@
     display: none;
 }
 
-ul  {
-    list-style-type: none;
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-}
-
-header {
-    background-color: orange;
-    margin: 0px;
-    padding: 0px;
-}
-
-#logo-text {
-    margin-top: 5px;
-}
-
-.logo-and-name {
-    border: 3px black solid;
-    padding-left: 10px; 
-    display: flex;
-    justify-content: space-between;
-}
-
-.name {
-    text-align: right;
-}
-
-.menu {
-    border: 3px black solid;
-    border-top: 1px black solid;
-}
-
-.menu-list {
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-}
-
-.aside-menu {
-    border-left: 2px black solid;
-    border-right: 2px black solid;
-    padding-right: 100px;
-}
-
-.main-page {
-    display: flex;
-    border-bottom: 3px black solid;
-    border-right: 3px black solid;
-}
-
-main {
-    margin-left: 30px;
-}
-
 footer {
     border-top: 1px black solid;
     border-left: 3px black solid;
@@ -118,15 +266,7 @@ footer {
     justify-content: space-between;
 }
 
-.introduction {
-    display: flex;
-    justify-content: space-between;
-}
 
-.introduction img {
-    margin: 30px;
-    margin-left: 150px;
-}
 
 .front-text {
     padding: 10px;
@@ -156,5 +296,4 @@ th, td {
 }
 
 #site-picture {
-    border: 3px solid black;
 }
