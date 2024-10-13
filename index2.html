@@ -43,13 +43,18 @@
 </head>
 <body>
     <header>
-        <div>
-            <img src="images/logo.png" width=50px height=50px alt="Логотип" />
-            <p>Это хедер c логотипом</p>
+        <div class="logo-and-name">
+            <div class="logo">
+                <img src="images/logo.png" width=50px height=50px alt="Логотип" />
+                <p id="logo-text">StarRuble</p>
+            </div>
+            <div class="name">
+                <p>Группа ЭФБО-09-23</p>
+                <p>Качурин Никита Викторович</p>
+            </div>
         </div>
-        <p>Это меню</p>
-        <nav>
-            <ul>
+        <nav class="menu">
+            <ul class="menu-list">
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="first_sem.html">Первый семестр</a></li>
                 <li><a>Второй семестр</a></li>
@@ -59,9 +64,8 @@
             </ul>
         </nav>
     </header>
-
-    <aside>
-        <h2>Элемент &ltaside&gt</h2>
+    <div class="main-page">
+    <aside class="aside-menu">
         <ul>
             <p>Навигация по странице</p>
             <li><a href="index.html#frontend">Фронтенд</a></li>
@@ -73,24 +77,24 @@
         <h1>Разработка веб-приложений</h1>
         <div class="sites"> 
             <section>
-                <a><img src="images/langing-page.jpg" width="300px" height="300px" /></a>
+                <a><img id="site-picture" src="images/langing-page.jpg" width="300px" height="300px" /></a>
                 <h3 class="site-names">Landing page</h3>
                 <button id="openModal1">Заказать сайт</button>
             </section>
             <section>
-                <a><img src="images/corporate-site.jpg" width="300px" height="300px" /></a>
+                <a><img id="site-picture" src="images/corporate-site.jpg" width="300px" height="300px" /></a>
                 <h3 class="site-names">Corporate site</h3>
                 <button id="openModal2">Заказать сайт</button>
             </section>
             <section>
-                <a><img src="images/shop-page.jpg" width="300px" height="300px" /></a>
+                <a><img id="site-picture" src="images/shop-page.jpg" width="300px" height="300px" /></a>
                 <h3 class="site-names">Shop page</h3>
                 <button id="openModal3">Заказать сайт</button>
             </section>  
         </div>
         <p>Тут много текста об этих сайтах</p>
     </main>
-
+    </div>
     <!-- Модальное окно -->
     <div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center;">
         <div class="modal-content" style="background-color: white; padding: 20px; border-radius: 8px; width: 400px;">

@@ -11,13 +11,18 @@
 </head>
 <body>
     <header>
-        <div>
-            <img src="images/logo.png" width=50px height=50px alt="Логотип" />
-            <p>Это хедер c логотипом</p>
+        <div class="logo-and-name">
+            <div class="logo">
+                <img src="images/logo.png" width=50px height=50px alt="Логотип" />
+                <p id="logo-text">StarRuble</p>
+            </div>
+            <div class="name">
+                <p>Группа ЭФБО-09-23</p>
+                <p>Качурин Никита Викторович</p>
+            </div>
         </div>
-      <p>Это меню</p>
-        <nav>
-            <ul>
+        <nav class="menu">
+            <ul class="menu-list">
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="first_sem.html">Первый семестр</a></li>
                 <li><a>Второй семестр</a></li>
@@ -27,14 +32,13 @@
             </ul>
         </nav>
     </header>
-    
-      <aside>
-            <h2>Элемент &ltaside&gt</h2>
+    <div class="main-page">
+      <aside class="aside-menu">
             <ul>
                 <p>Навигация по странице</p>
                 <li><a>Лекции</a></li>
                 <li><a>Практики</a></li>
-                <li><a>Адрем вуза</a></li>
+                <li><a>Адреc вуза</a></li>
                 <li><a>Рабочая программа</a></li>
             </ul>
         </aside>
@@ -42,7 +46,7 @@
             <h1>Первый семестр</h1>
             <h2>Лекции</h2>
             <table>
-                <tr>
+                <tr id="first-row">
                     <th>Номер</th>
                     <th>Тема</th>
                     <th>Посещение</th>
@@ -90,7 +94,7 @@
             </table>
             <h2>Практики</h2>
             <table>
-                <tr>
+                <tr id="first-row">
                     <th>Номер</th>
                     <th>Тема</th>
                     <th>Посещение</th>
@@ -202,6 +206,7 @@
                 </p>
             </object>
         </main>
+        </div>
         <footer>
             <p>&copy; Качурин Никита Викторович, 2024. Все права защищены.</p>
             <ul class="social-links">

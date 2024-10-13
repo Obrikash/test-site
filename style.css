@@ -1,6 +1,7 @@
 .sites {
-    display: inline-block;
-    border: 5px solid;
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid;
 }
 
 .site-names {
@@ -50,4 +51,110 @@
 
 ul  {
     list-style-type: none;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+header {
+    background-color: orange;
+    margin: 0px;
+    padding: 0px;
+}
+
+#logo-text {
+    margin-top: 5px;
+}
+
+.logo-and-name {
+    border: 3px black solid;
+    padding-left: 10px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    text-align: right;
+}
+
+.menu {
+    border: 3px black solid;
+    border-top: 1px black solid;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.aside-menu {
+    border-left: 2px black solid;
+    border-right: 2px black solid;
+    padding-right: 100px;
+}
+
+.main-page {
+    display: flex;
+    border-bottom: 3px black solid;
+    border-right: 3px black solid;
+}
+
+main {
+    margin-left: 30px;
+}
+
+footer {
+    border-top: 1px black solid;
+    border-left: 3px black solid;
+    border-right: 3px black solid;
+    border-bottom: 3px black solid;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.introduction {
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduction img {
+    margin: 30px;
+    margin-left: 150px;
+}
+
+.front-text {
+    padding: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+table {
+    border: 3px black solid;
+    border-collapse: collapse;
+}
+
+#first-row {
+    background-color: lavender;
+}
+
+th, td {
+    text-align: left;
+}
+
+#site-picture {
+    border: 3px solid black;
 }

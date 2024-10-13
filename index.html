@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,21 @@
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <div>
-            <img src="images/logo.png" width=50px height=50px alt="Логотип" />
-            <p>Это хедер c логотипом</p>
+        <div class="logo-and-name">
+            <div class="logo">
+                <img src="images/logo.png" width=50px height=50px alt="Логотип" />
+                <p id="logo-text">StarRuble</p>
+            </div>
+            <div class="name">
+                <p>Группа ЭФБО-09-23</p>
+                <p>Качурин Никита Викторович</p>
+            </div>
         </div>
-      <p>Это меню</p>
-        <nav>
-            <ul>
+        <nav class="menu">
+            <ul class="menu-list">
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="first_sem.html">Первый семестр</a></li>
                 <li><a>Второй семестр</a></li>
@@ -27,57 +34,64 @@
             </ul>
         </nav>
     </header>
-    
-      <aside>
-            <h2>Элемент &ltaside&gt</h2>
-            <ul>
-                <p>Навигация по странице</p>
-                <li><a href="#frontend">Фронтенд</a></li>
-                <li><a href="#backend">Бэкенд</a></li>
-            </ul>
-        </aside>
-      <main>
-            <h1>Добро пожаловать на мой сайт</h1>
-            <p>Меня зовут Качурин Никита и я начинающий специалист по веб-разработке</p>
-            <img src="images/kazak.jpg" width="400" height="400" alt="Фото автора сайта" />
-            <section>
+    <div class="main-page">
+    <aside class="aside-menu">
+        <ul>
+            <p>Навигация по странице</p>
+            <li><a href="#frontend">Фронтенд</a></li>
+            <li><a href="#backend">Бэкенд</a></li>
+        </ul>
+    </aside>
+    <main>
+        <div class="introduction">
+        <div class="front-text">
+        <h1>Добро пожаловать на мой сайт</h1>
+        <p>Меня зовут Качурин Никита и я начинающий специалист по веб-разработке</p>
+        </div>
+        <img src="images/kazak.jpg" width="300" height="300" alt="Фото автора сайта" />
+        </div>
+        <section>
             <h2 id="frontend">Фронтенд</h2>
-            <p>Фронтенд (или клиентская часть) - это то, что видит пользователь. Он включает в себя все визуальные элементы веб-сайта или приложения: кнопки, формы, изображения и текст. Фронтенд разработчики используют языки разметки и стилизации, такие как HTML, CSS, и JavaScript, чтобы создавать интерактивные и привлекательные интерфейсы. Основная задача фронтенда - обеспечить удобство использовния и эстетическую привлекательность.</p>
-            <video
-            controls
-            width="400"
-            
-            muted
-            preload="auto">
-            <source src="sources/sobol_egg.mp4" type="video/mp4" />
-            <p>
-                Ваш браузер не поддерживает формат этого видео. <a href="sources/sobol_egg.mp4">Вот ссылка на видео</a>
-            </p>
+            <p>Фронтенд (или клиентская часть) - это то, что видит пользователь. Он включает в себя все визуальные
+                элементы веб-сайта или приложения: кнопки, формы, изображения и текст. Фронтенд разработчики используют
+                языки разметки и стилизации, такие как HTML, CSS, и JavaScript, чтобы создавать интерактивные и
+                привлекательные интерфейсы. Основная задача фронтенда - обеспечить удобство использовния и эстетическую
+                привлекательность.</p>
+            <video controls width="400" muted preload="auto">
+                <source src="sources/sobol_egg.mp4" type="video/mp4" />
+                <p>
+                    Ваш браузер не поддерживает формат этого видео. <a href="sources/sobol_egg.mp4">Вот ссылка на
+                        видео</a>
+                </p>
             </video>
-            </section>
-            <section>
+        </section>
+        <section>
             <h2 id="backend">Бэкенд</h2>
-            <p>Бэкенд (или серверная часть) - это "за кулисами" веб-приложения. Он отвечает за обработку данных, управление пользователями и взаимодействие с базами данных. Бэкенд разработчики используют, языки программирования, такие как Python, Ruby, Java или PHP, а также фреймворки и базы днных для создания логики приложения. Основная задача бэкенда - обеспечить стабильную работу приложения и безопасность данных.</p>
-            <video
-            controls
-            width="400"
-            
-            muted
-            preload="auto">
-            <source src="sources/videvo2.mp4" type="video/mp4" />
-            <p>
-                Ваш браузер не поддерживает формат этого видео. <a href="sources/videvo2.mp4">Вот ссылка на видео</a>
-            </p>
+            <p>Бэкенд (или серверная часть) - это "за кулисами" веб-приложения. Он отвечает за обработку данных,
+                управление пользователями и взаимодействие с базами данных. Бэкенд разработчики используют, языки
+                программирования, такие как Python, Ruby, Java или PHP, а также фреймворки и базы днных для создания
+                логики приложения. Основная задача бэкенда - обеспечить стабильную работу приложения и безопасность
+                данных.</p>
+            <video controls width="400" muted preload="auto">
+                <source src="sources/videvo2.mp4" type="video/mp4" />
+                <p>
+                    Ваш браузер не поддерживает формат этого видео. <a href="sources/videvo2.mp4">Вот ссылка на
+                        видео</a>
+                </p>
             </video>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; Качурин Никита Викторович, 2024. Все права защищены.</p>
-            <ul class="social-links">
-                <a href="https://vk.com" target="_blank" rel="noopener noreferrer"><img src="images/vk.png" width=25px heigth=25px alt="vkontakte" /></a>
-                <a href="https://whatsapp.com" target="_blank"><img src="images/whatsapp.png" width="25px" height="25px" alt="Whatsapp" /></a>
-            </ul>
-        </footer>          
-    
+        </section>
+    </main>
+    </div>
+    <footer>
+        <p>&copy; Качурин Никита Викторович, 2024. Все права защищены.</p>
+        <div class="social-links">
+            <a href="https://vk.com" target="_blank" rel="noopener noreferrer"><img src="images/vk.png" width=25px
+                    heigth=25px alt="vkontakte" /></a>
+            <a href="https://whatsapp.com" target="_blank"><img src="images/whatsapp.png" width="25px" height="25px"
+                    alt="Whatsapp" /></a>
+            </div>
+    </footer>
+
 </body>
+
 </html>
