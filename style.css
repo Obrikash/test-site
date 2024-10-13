@@ -85,6 +85,11 @@ article, section, aside {
     margin-bottom: 20px;
 }
 
+aside {
+    margin-bottom: 0px;
+    border-bottom: 0;
+}
+
 ul  {
     list-style-type: none;
     padding: 0px;
@@ -111,7 +116,7 @@ img {
 }
 
 .product-cards {
-    padding-left: 400px;
+    padding-left: 0;
 }
 
 .main-heading {
@@ -128,7 +133,11 @@ img {
     display: flex;
     justify-content: space-around;
     border: 3px solid;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
+
+
 
 .product-cards section {
     display: flex;
@@ -295,5 +304,41 @@ th, td {
     text-align: left;
 }
 
-#site-picture {
+/* Контейнер для сетки */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    grid-template-rows: repeat(2, auto);   /* 2 строки с автоматической высотой */
+    gap: 20px; /* Отступы между элементами */
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Оформление элементов сетки */
+.grid-item {
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Изображения внутри сетки */
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Абсолютное позиционирование изображения в item2 */
+.item2 {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 200px; /* Настраиваем позицию сверху */
+    left: 200px; /* Настраиваем позицию слева */
+    z-index: 2; /* Устанавливаем порядок наложения */
+    width: 200px; /* Задаём размер изображения */
+    height: auto;
+    border: 5px solid #ff5733; /* Дополнительные стили для выделения */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
