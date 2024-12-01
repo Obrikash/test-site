@@ -7,6 +7,8 @@
     <link rel="icon" href="images/favicon.ico" sizes="16x16" type="image/x-icon">
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script defer>
         // Открыть модальное окно
@@ -40,58 +42,91 @@
             // Alternatively: window.location.href = 'thank-you.html';
         });
     </script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo-and-name">
-            <div class="logo">
-                <img src="images/logo.png" width=50px height=50px alt="Логотип" />
-                <p id="logo-text">StarRuble</p>
+    <header class="fixed-top bg-white shadow-sm">
+        <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+            <div class="d-flex align-items-center">
+                <img src="images/logo.png" width="50" height="50" alt="Логотип" />
+                <p id="logo-text" class="ms-2 mb-0 fw-bold">StarRuble</p>
             </div>
-            <div class="student-name">
-                <p>Группа ЭФБО-09-23</p>
-                <p>Качурин Никита Викторович</p>
+            <div class="text-end">
+                <p class="mb-0 small">Группа ЭФБО-09-23</p>
+                <p class="mb-0 small">Качурин Никита Викторович</p>
             </div>
         </div>
-        <nav class="menu">
-            <ul class="menu-list">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="first_sem.html">Первый семестр</a></li>
-                <li><a>Второй семестр</a></li>
-                <li><a>Услуги</a></li>
-                <li><a>Авторизация</a></li>
-                <li><a href="index2.html">Разработка веб-приложений</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="first_sem.html">Первый семестр</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Второй семестр
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Модуль 1</a></li>
+                                <li><a class="dropdown-item" href="#">Модуль 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Услуги</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Авторизация</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index2.html">Разработка веб-приложений</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <div class="main-page">
-    <aside>
-        <ul>
-            <p>Навигация по странице</p>
-            <li><a href="index.html#frontend">Фронтенд</a></li>
-            <li><a href="index.html#backend">Бэкенд</a></li>
-        </ul>
-    </aside>
+    <aside class="col-md-3">
+                <div class="bg-white p-3 rounded shadow-sm">
+                    <h5>Навигация по странице</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#frontend">Фронтенд</a></li>
+                        <li><a href="#backend">Бэкенд</a></li>
+                    </ul>
+                </div>
+            </aside>
 
     <main class="product-cards">
-        <h1 class="main-heading">Разработка веб-приложений</h1>
-        <div class="product-card"> 
-            <section>
-                <a><img id="site-picture" src="images/langing-page.jpg" width="300px" height="300px" /></a>
-                <h3 class="site-names main-heading">Landing page</h3>
-                <button id="openModal1">Заказать сайт</button>
-            </section>
-            <section>
-                <a><img id="site-picture" src="images/corporate-site.jpg" width="300px" height="300px" /></a>
-                <h3 class="site-names main-heading">Corporate site</h3>
-                <button id="openModal2">Заказать сайт</button>
-            </section>
-            <section>
-                <a><img id="site-picture" src="images/shop-page.jpg" width="300px" height="300px" /></a>
-                <h3 class="site-names main-heading">Shop page</h3>
-                <button id="openModal3">Заказать сайт</button>
-            </section> 
-        </div>
+        <div class="container my-5">
+            <h1 class="text-center mb-4">Разработка веб-приложений</h1>
+    
+            <!-- Product Cards Grid -->
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="images/langing-page.jpg" class="card-img-top" alt="Landing page">
+                        <div class="card-body">
+                            <h5 class="card-title">Landing page</h5>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать сайт</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="images/corporate-site.jpg" class="card-img-top" alt="Corporate site">
+                        <div class="card-body">
+                            <h5 class="card-title">Corporate site</h5>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать сайт</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="images/shop-page.jpg" class="card-img-top" alt="Shop page">
+                        <div class="card-body">
+                            <h5 class="card-title">Shop page</h5>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать сайт</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <p class="text-product-cards">Заказывайте по самым демократичным ценам!</p>
         <div class="grid-container">
             <div class="grid-item item1">
@@ -117,52 +152,60 @@
                 <img src="images/shop-page.jpg" alt="Изображение 2" />
             </div>
         </div>
-    </main>
-    </div>
-    <!-- Модальное окно -->
-    <div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center;">
-        <div class="modal-content" style="background-color: white; padding: 20px; border-radius: 8px; width: 400px;">
-            <span class="close" style="float: right; cursor: pointer;" onclick="closeModal()">&times;</span>
-            <form>
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
+        
+    
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="form-group">
-                    <label for="email">Электронная почта:</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Электронная почта</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Страна</label>
+                            <select class="form-select" id="country" name="country">
+                                <option value="russia" selected>Россия</option>
+                                <option value="usa">США</option>
+                                <option value="germany">Германия</option>
+                                <option value="france">Франция</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dateChoice" class="form-label">Дата</label>
+                            <input type="date" class="form-control" id="dateChoice" name="dateChoice">
+                        </div>
+                        <div class="mb-3">
+                            <label for="comments" class="form-label">Комментарии</label>
+                            <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Введите ваши пожелания"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Отправить</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Телефон:</label>
-                    <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                </div>
-                <div class="form-group">
-                    <label for="country">Страна:</label>
-                    <select id="country" name="country">
-                        <option value="usa">США</option>
-                        <option value="russia">Россия</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="date">Дата</label>
-                    <input type="date" id="dateChoice" name="dateChoice">
-                </div>
-                <div class="form-group">
-                    <label for="comments">Комментарии:</label>
-                    <textarea id="comments" name="comments" rows="4"></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Отправить</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
+    
 
-    <footer>
+    <footer class="bg-light text-center py-4">
         <p>&copy; Качурин Никита Викторович, 2024. Все права защищены.</p>
         <ul class="social-links">
             <a href="https://vk.com" target="_blank" rel="noopener noreferrer"><img src="images/vk.png" width=25px heigth=25px alt="vkontakte" /></a>
             <a href="https://whatsapp.com" target="_blank"><img src="images/whatsapp.png" width="25px" height="25px" alt="Whatsapp" /></a>
+            <button id="scrollTopBtn" onclick="scrollToTop()">⬆️</button>   
         </ul>
     </footer>          
 </body>

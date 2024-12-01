@@ -1,8 +1,14 @@
 body {
-    background-color: orange;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    flex-direction: column;
     background-color: whitesmoke;
     margin: 0px;
     padding: 0px;
@@ -42,6 +48,9 @@ header {
 .menu-list {
     display: flex;
     justify-content: space-around;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 0;
 }
 
@@ -74,8 +83,8 @@ h2 {
     font-size: 16px;
 }
 
-main {
-    margin-left: 30px;
+.main-first-sem {
+    margin-left: 10px;
 }
 
 article, section, aside {
@@ -83,6 +92,10 @@ article, section, aside {
     padding: 15px; 
     background-color: lightgray;
     margin-bottom: 20px;
+}
+
+aside {
+    border: 0px;
 }
 
 aside {
@@ -97,6 +110,7 @@ ul  {
 
 img {
     max-width: 100%;
+    height: auto;
     margin: 10px 0; 
 }
 
@@ -111,8 +125,6 @@ img {
 
 .main-page {
     display: flex;
-    border-bottom: 3px black solid;
-    border-right: 3px black solid;
 }
 
 .product-cards {
@@ -184,7 +196,7 @@ button:active {
 .modal {
     display: none; /* Скрываем модальное окно по умолчанию */
     position: fixed;
-    z-index: 1;
+    z-index: 1055;
     left: 0;
     top: 0;
     width: 100%;
@@ -265,10 +277,7 @@ button:active {
 }
 
 footer {
-    border-top: 1px black solid;
-    border-left: 3px black solid;
-    border-right: 3px black solid;
-    border-bottom: 3px black solid;
+    border: 2px black solid;
     margin-top: 0;
     display: flex;
     align-items: center;
@@ -307,6 +316,7 @@ th, td {
 /* Контейнер для сетки */
 .grid-container {
     display: grid;
+    position: relative;
     grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
     grid-template-rows: repeat(2, auto);   /* 2 строки с автоматической высотой */
     gap: 20px; /* Отступы между элементами */
@@ -334,11 +344,145 @@ th, td {
 /* Абсолютное позиционирование изображения в item2 */
 .item2 {
     position: absolute; /* Абсолютное позиционирование */
-    top: 200px; /* Настраиваем позицию сверху */
-    left: 200px; /* Настраиваем позицию слева */
+    top: 50%; /* Настраиваем позицию сверху */
+    left: 50%; /* Настраиваем позицию слева */
     z-index: 2; /* Устанавливаем порядок наложения */
     width: 200px; /* Задаём размер изображения */
     height: auto;
     border: 5px solid #ff5733; /* Дополнительные стили для выделения */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для мобильных устройств (ширина экрана до 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        padding-top: 250px;
+    }
+    .main-page {
+        flex-direction: column;
+    }
+    .logo-and-name, .menu-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-list li {
+        margin: 5px 0;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+
+/* Стили для планшетов (ширина экрана от 600px до 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    .main-page {
+        flex-direction: row;
+    }
+    .menu-list {
+        flex-wrap: wrap;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+}
+
+/* Стили для десктопов (ширина экрана от 900px и выше) */
+@media (min-width: 900px) {
+    .main-page {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    body {
+        padding-top: 150px;
+    }
+}
+
+@media (min-width: 150px) and (max-width: 600px){
+    .modal-content input, 
+    .modal-content select, 
+    .modal-content textarea, 
+    .modal-content button {
+        width: 100%;
+        font-size: 14px;
+    }
+    img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content input, 
+    .modal-content select, 
+    .modal-content textarea, 
+    .modal-content button {
+        width: 50%;
+        font-size: 14px;
+    }
+}
+
+iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 100px;
+    background-color: blue  ;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#scrollTopBtn:hover {
+    background-color: orangered;
+}
+
+.card-img-top {
+    display: block; /* Отключает интерлиньяж между изображением и окружающей средой */
+    margin: 0 auto; /* Центрирует изображение по горизонтали */
+    max-height: 200px; /* Пример ограничения по высоте, можете настроить по своему усмотрению */
+    object-fit: cover; /* Изображение будет заполнять элемент */
+}
+
+.carousel-item img {
+    display: block;
+    margin: 0 auto;
+    max-height: 500px; /* Установите свою высоту для изображений */
+    object-fit: cover; /* Предотвращает искажение изображений */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    background-color: transparent; /* убираем фон */
+    border-radius: 50%; /* если у вас круглые стрелки */
+    border: 2px solid black; /* увеличиваем толщину стрелок, если они выполнены через бордеры */
+}
+
+
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    outline: none; /* Убираем обводку при нажатии */
+    box-shadow: none; /* Убираем тень, если она есть */
+    background-color: transparent; /* Убираем любую фоновую окраску */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    outline: none; /* Убираем обводку при нажатии */
+    box-shadow: none; /* Убираем тень, если она есть */
+    background-color: transparent; /* Убираем любую фоновую окраску */
 }
