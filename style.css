@@ -342,16 +342,6 @@ th, td {
 }
 
 /* Абсолютное позиционирование изображения в item2 */
-.item2 {
-    position: absolute; /* Абсолютное позиционирование */
-    top: 50%; /* Настраиваем позицию сверху */
-    left: 50%; /* Настраиваем позицию слева */
-    z-index: 2; /* Устанавливаем порядок наложения */
-    width: 200px; /* Задаём размер изображения */
-    height: auto;
-    border: 5px solid #ff5733; /* Дополнительные стили для выделения */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-}
 
 /* Стили для мобильных устройств (ширина экрана до 600px) */
 @media (max-width: 600px) {
@@ -485,4 +475,35 @@ iframe, embed, object {
     outline: none; /* Убираем обводку при нажатии */
     box-shadow: none; /* Убираем тень, если она есть */
     background-color: transparent; /* Убираем любую фоновую окраску */
+}
+
+h1 {
+    transition: transform 0.3s ease-in-out;
+}
+
+h1:hover {
+    transform: scale(1.2);
+}
+
+p {
+    transition: background-color 0.5s ease-in-out;
+}
+
+img[alt="Фото автора сайта"] {
+    transition: transform 0.5s ease-in-out;
+}
+
+img[alt="Фото автора сайта"]:hover {
+    transform: rotate(360deg);
+}
+
+.hidden {
+    display: none; /* Таблица по умолчанию скрыта */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+    display: table; /* Показываем таблицу */
+    opacity: 1;
 }
